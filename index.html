@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Final Ride</title>
+    <link rel="stylesheet" href="./cssreset.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body id="game">
-    <div class="" id="game-wrapper"></div>
+    <div class="screen">
+    <div class="left-container">
+        <div class="title">
+            <p>Final Ride</p>
+        </div>
+        <div class="description">
+            <p>The throtle is stuck at max and your braking system is gone</p>
+            <p>How long can your prolong the inevitable?</p>
+        </div>
+        <div class="instructions">
+            <label>Instructions:</label>
+                <ul class="instruction-ul">
+                    <li>Use left (←) and right (→) arrows to control the motorcycle</li>
+                    <li>The longer you survive, the more points you earn</li>
+                </ul>
+        </div>
+    </div>
+        <div class="right-container" id="game-container">
+            <div class="score">
+
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="finalride.js"></script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+html *{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.screen{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 440px;
+    background-color: black;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+}
+
+.title{
+    background-color: rgb(14, 27, 144);
+    height: 20px;
+    width: 160px;
+    text-align: center;
+    padding-top: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    color: white;
+    margin-top: 90px;
+}
+
+.description{
+    background-color: white;
+    text-align: center;
+    color: black;
+    height: 70px;
+    width: 300px;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 3px;
+    line-height: 25px;
+}
+
+
+.instructions{
+    background-color: white;
+    text-align: center;
+    color: black;
+    height: 120px;
+    width: 300px;
+    margin-top: 70px;
+    padding: 20px;
+    border-radius: 3px;
+    line-height: 25px;
+}
+
+.instruction-ul{
+    list-style: circle;
+}
+
+.right-container{
+    height: 650px;
+    width: 840px;
+    position: relative;
+    background-color: teal;
+    overflow: hidden
+}
+
+.score{
+    background-color: 'orange';
+    width: '120px';
+    height: '25px';
+    z-index: 30;
+    text-align: 'center';
+    position: 'absolute';
+    top: '0px';
+    right: '0px';
+}

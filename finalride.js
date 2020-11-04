@@ -12,6 +12,110 @@ resetButton.onclick = function () {
 };
 mainWrap.appendChild(resetButton);
 
+// BUSH
+const bush_image = document.getElementById('bush');
+
+const bush0 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 0,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+const bush1 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 75,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+const bush2 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 150,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+const bush3 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 250,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+const bush4 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 350,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+const bush5 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 450,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+const bush6 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 550,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+const bush7 = {
+    w: 50,
+    h: 50,
+    x: 50,
+    y: 650,
+    size: 20,
+    dx: 5,
+    dy: 11
+}
+
+function drawBush() {
+    ctx.drawImage(bush_image, bush0.x, bush0.y, bush0.w, bush0.h)
+    ctx.drawImage(bush_image, bush1.x, bush1.y, bush1.w, bush1.h)
+    ctx.drawImage(bush_image, bush2.x, bush2.y, bush2.w, bush2.h)
+    ctx.drawImage(bush_image, bush3.x, bush3.y, bush3.w, bush3.h)
+    ctx.drawImage(bush_image, bush4.x, bush4.y, bush4.w, bush4.h)
+    ctx.drawImage(bush_image, bush5.x, bush5.y, bush5.w, bush5.h)
+    ctx.drawImage(bush_image, bush6.x, bush6.y, bush6.w, bush6.h)
+    ctx.drawImage(bush_image, bush7.x, bush7.y, bush7.w, bush7.h)
+    ctx.drawImage(bush_image, bush1.x + 650, bush1.y, bush1.w, bush1.h)
+    ctx.drawImage(bush_image, bush2.x + 650, bush2.y, bush2.w, bush2.h)
+    ctx.drawImage(bush_image, bush3.x + 650, bush3.y, bush3.w, bush3.h)
+    ctx.drawImage(bush_image, bush4.x + 650, bush4.y, bush4.w, bush4.h)
+    ctx.drawImage(bush_image, bush5.x + 650, bush5.y, bush5.w, bush5.h)
+    ctx.drawImage(bush_image, bush6.x + 650, bush6.y, bush6.w, bush6.h)
+    ctx.drawImage(bush_image, bush7.x + 650, bush7.y, bush7.w, bush7.h)
+}
+
+
+// END OF BUSH
+
 
 // YELLOW CAR
 const y_image = document.getElementById('yellow-car');
@@ -23,13 +127,49 @@ const y_car1 = {
     y: -20,
     size: 20,
     dx: 5,
-    dy: 2.2
+    dy: 3.3
 }
 
 function drawYellowCar() {
     ctx.drawImage(y_image, y_car1.x, y_car1.y, y_car1.w, y_car1.h)
 }
 // END OF YELLOW CAR
+
+// BLUE CAR2
+const b_image3 = document.getElementById('blue-car');
+
+const b_car2 = {
+    w: 50,
+    h: 90,
+    x: 150,
+    y: -430,
+    size: 20,
+    dx: 5,
+    dy: 3.3
+}
+
+function drawBlueCar2() {
+    ctx.drawImage(b_image3, b_car2.x, b_car2.y, b_car2.w, b_car2.h)
+}
+// END OF BLUE CAR2
+
+// YELLOW CAR2
+const y_image2 = document.getElementById('yellow-car');
+
+const y_car2 = {
+    w: 50,
+    h: 90,
+    x: 520,
+    y: -450,
+    size: 20,
+    dx: 5,
+    dy: 5
+}
+
+function drawYellow2Car() {
+    ctx.drawImage(y_image2, y_car2.x, y_car2.y, y_car2.w, y_car2.h)
+}
+// END OF YELLOW CAR2
 
 
 // RED CAR
@@ -67,6 +207,24 @@ function drawBlueCar() {
     ctx.drawImage(b_image, b_car1.x, b_car1.y, b_car1.w, b_car1.h)
 }
 // END OF BLUE CAR
+
+// GREEN CAR 2
+const b_image2 = document.getElementById('green-car');
+
+const g_car2 = {
+    w: 50,
+    h: 90,
+    x: 290,
+    y: -460,
+    size: 20,
+    dx: 5,
+    dy: 4
+}
+
+function drawGreenCar2() {
+    ctx.drawImage(b_image2, g_car2.x, g_car2.y, g_car2.w, g_car2.h)
+}
+// END OF GREEN CAR 2
 
 
 // GREEN CAR
@@ -122,21 +280,38 @@ const truck2 = {
 }
 
 function drawTruck2() {
-    ctx.drawImage(t_image, truck2.x, truck2.y, truck2.w, truck2.h)
+    ctx.drawImage(t_image1, truck2.x, truck2.y, truck2.w, truck2.h)
+}
+// END OF TRUCK2
+
+// TRUCK3
+const t_image3 = document.getElementById('truck');
+
+const truck3 = {
+    w: 70,
+    h: 200,
+    x: 600,
+    y: -920,
+    size: 20,
+    dx: 5,
+    dy: 4.4
+}
+
+function drawTruck3() {
+    ctx.drawImage(t_image3, truck3.x, truck3.y, truck3.w, truck3.h)
 }
 // END OF TRUCK2
 
 
 
-
-
+//PLAYER
 const p_image = document.getElementById('player');
 
 const player = {
     w: 40,
     h: 80,
     x: 360,
-    y: 550,
+    y: 530,
     speed: 5,
     dx: 0,
     dy: 0,
@@ -151,12 +326,12 @@ function clear(){
 }
 
 function edgeStop(){
-    if(player.x < 0 ){
-        player.x = 0;
+    if(player.x < 125 ){
+        player.x = 125;
     }
 
-    if ((player.x + player.w) > canvas.width){
-        player.x = canvas.width - player.w;
+    if ((player.x + player.w) > canvas.width - 165){
+        player.x = canvas.width - player.w - 165;
     }
 }
 
@@ -167,24 +342,97 @@ function newPos(){
     edgeStop();
 }
 
+// END OF PLAYER
+
 function update(){
     clear();
 
+    drawBush();
     drawPlayer();
     drawTruck1();
     drawTruck2();
+    drawTruck3();
     drawBlueCar();
+    drawBlueCar2();
+    drawGreenCar2();
     drawGreenCar();
     drawRedCar();
     drawYellowCar();
+    drawYellow2Car();
 
     newPos();
+
+    //BUSH MOVEMENT
+    bush0.y += bush0.dy;
+    if (bush0.y + bush0.size > canvas.height) {
+        bush0.y = -10;
+        bush0.dy += 0.2;
+    }
+
+    bush1.y += bush1.dy;
+    if (bush1.y + bush1.size > canvas.height) {
+        bush1.y = -10;
+        bush1.dy += 0.2;
+    }
+
+    bush2.y += bush2.dy;
+    if (bush2.y + bush2.size > canvas.height) {
+        bush2.y = -10;
+        bush2.dy += 0.2;
+    }
+
+    bush3.y += bush3.dy;
+    if (bush3.y + bush3.size > canvas.height) {
+        bush3.y = -10;
+        bush3.dy += 0.2;
+    }
+
+    bush4.y += bush4.dy;
+    if (bush4.y + bush4.size > canvas.height) {
+        bush4.y = -10;
+        bush4.dy += 0.2;
+    }
+
+    bush5.y += bush5.dy;
+    if (bush5.y + bush5.size > canvas.height) {
+        bush5.y = -10;
+        bush5.dy += 0.2;
+    }
+
+    bush6.y += bush6.dy;
+    if (bush6.y + bush6.size > canvas.height) {
+        bush6.y = -10;
+        bush6.dy += 0.2;
+    }
+
+    bush7.y += bush7.dy;
+    if (bush7.y + bush7.size > canvas.height) {
+        bush7.y = -10;
+        bush7.dy += 0.2;
+    }
+    //END BUSH MOVEMENT
 
     //YELLOW CAR MOVEMENT
     y_car1.y += y_car1.dy;
 
     if (y_car1.y + y_car1.size > canvas.height) {
         y_car1.y = -90;
+    }
+    //END YELLOW CAR MOVEMENT
+
+    //BLUE CAR2 MOVEMENT
+    b_car2.y += b_car2.dy;
+
+    if (b_car2.y + b_car2.size > canvas.height) {
+        b_car2.y = -90;
+    }
+    //END BLUE CAR2 MOVEMENT
+
+    //YELLOW CAR MOVEMENT
+    y_car2.y += y_car2.dy;
+
+    if (y_car2.y + y_car2.size > canvas.height) {
+        y_car2.y = -90;
     }
     //END YELLOW CAR MOVEMENT
 
@@ -196,13 +444,21 @@ function update(){
     }
     //END RED CAR MOVEMENT
 
-    //GREEN CAR MOVEMENT
+    //GREEN CAR1 MOVEMENT
+    g_car2.y += g_car2.dy;
+
+    if (g_car2.y + g_car2.size > canvas.height) {
+        g_car2.y = -90;
+    }
+    //END GREEN CAR 1 MOVEMENT
+
+    //GREEN CAR2 MOVEMENT
     g_car1.y += g_car1.dy;
 
     if (g_car1.y + g_car1.size > canvas.height) {
         g_car1.y = -90;
     }
-    //END GREEN CAR MOVEMENT
+    //END GREEN CAR2 MOVEMENT
 
     //BLUE CAR MOVEMENT
     b_car1.y += b_car1.dy;
@@ -211,6 +467,7 @@ function update(){
         b_car1.y = -90;
     }
     //END BLUE CAR MOVEMENT
+
 
     //TRUCK1 MOVEMENT
     truck1.y += truck1.dy;
@@ -227,6 +484,15 @@ function update(){
         truck2.y = -200;
     }
     //END TRUCK2 MOVEMENT
+
+    //TRUCK3 MOVEMENT
+    truck3.y += truck3.dy;
+
+    if (truck3.y + truck3.size > canvas.height) {
+        truck3.y = -200;
+    }
+    //END TRUCK3 MOVEMENT
+
 
     requestAnimationFrame(update);
 }

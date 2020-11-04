@@ -1,5 +1,9 @@
 html *{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.screen{
+    padding: 50px;
 }
 
 .screen{
@@ -19,10 +23,10 @@ html *{
 
 .title{
     background-color: rgb(14, 27, 144);
-    height: 20px;
+    height: 30px;
     width: 160px;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 15px;
     border: 1px solid black;
     border-radius: 2px;
     color: white;
@@ -54,25 +58,30 @@ html *{
     line-height: 25px;
 }
 
-.instruction-ul{
-    list-style: circle;
-}
-
-.right-container{
+/* .right-container{
     height: 650px;
     width: 840px;
     position: relative;
     background-color: teal;
     overflow: hidden
+} */
+
+#canvas{
+    background-color: rgba(21, 23, 29, 0.938);
+    border-radius: 4px;
 }
 
 .score{
-    background-color: 'orange';
-    width: '120px';
-    height: '25px';
-    z-index: 30;
-    text-align: 'center';
-    position: 'absolute';
-    top: '0px';
-    right: '0px';
+    position: absolute;
+    background-color: orange;
+    border-radius: 4px;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    top: 0px;
+    left: 70vh;
+}
+
+.entity{
+    display: none;
 }

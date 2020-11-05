@@ -1,3 +1,4 @@
+
 let mainWrap = document.getElementById('game-container');
 let gameWrap = document.createElement('div');
 mainWrap.appendChild(gameWrap);
@@ -6,6 +7,7 @@ const ctx = canvas.getContext('2d');
 
 
 let resetButton = document.createElement('button');
+resetButton.className = "restart";
 resetButton.innerHTML = 'RESTART';
 resetButton.onclick = function () {
     window.location.reload();
@@ -14,10 +16,15 @@ mainWrap.appendChild(resetButton);
 
 
 
+
+
 //COLLISION CONSTANTS
-const SHOW_ENTITY_BOUNDS = true;
-const SHOW_ENTITY_AXIS = false;
+// const SHOW_ENTITY_BOUNDS = true;
+// const SHOW_ENTITY_AXIS = false;
 //END COLLISION
+
+
+
 
 
 // BUSH
@@ -123,6 +130,8 @@ function drawBush() {
 // END OF BUSH
 
 
+let allCars = [];
+
 // YELLOW CAR
 const y_image = document.getElementById('yellow-car');
 
@@ -136,10 +145,33 @@ const y_car1 = {
     dy: 3.25
 }
 
+allCars.push(y_car1)
+
 function drawYellowCar() {
     ctx.drawImage(y_image, y_car1.x, y_car1.y, y_car1.w, y_car1.h)
 }
 // END OF YELLOW CAR
+
+
+// YELLOW CAR2
+const y_image2 = document.getElementById('yellow-car');
+
+const y_car2 = {
+    w: 50,
+    h: 90,
+    x: 520,
+    y: -450,
+    size: 20,
+    dx: 5,
+    dy: 4.00
+}
+
+allCars.push(y_car2)
+
+function drawYellow2Car() {
+    ctx.drawImage(y_image2, y_car2.x, y_car2.y, y_car2.w, y_car2.h)
+}
+// END OF YELLOW CAR2
 
 // BLUE CAR2
 const b_image3 = document.getElementById('blue-car');
@@ -154,28 +186,14 @@ const b_car2 = {
     dy: 3.3
 }
 
+
+allCars.push(b_car2)
+
 function drawBlueCar2() {
     ctx.drawImage(b_image3, b_car2.x, b_car2.y, b_car2.w, b_car2.h)
 }
 // END OF BLUE CAR2
 
-// YELLOW CAR2
-const y_image2 = document.getElementById('yellow-car');
-
-const y_car2 = {
-    w: 50,
-    h: 90,
-    x: 520,
-    y: -450,
-    size: 20,
-    dx: 5,
-    dy: 5.00
-}
-
-function drawYellow2Car() {
-    ctx.drawImage(y_image2, y_car2.x, y_car2.y, y_car2.w, y_car2.h)
-}
-// END OF YELLOW CAR2
 
 
 // RED CAR
@@ -190,6 +208,8 @@ const r_car1 = {
     dx: 5,
     dy: 3.00
 }
+
+allCars.push(r_car1)
 
 function drawRedCar() {
     ctx.drawImage(r_image, r_car1.x, r_car1.y, r_car1.w, r_car1.h)
@@ -209,6 +229,8 @@ const r_car2 = {
     dy: 4.20
 }
 
+allCars.push(r_car2)
+
 function drawRedCar2() {
     ctx.drawImage(r_image2, r_car2.x, r_car2.y, r_car2.w, r_car2.h)
 }
@@ -227,6 +249,8 @@ const b_car1 = {
     dy: 3.94
 }
 
+allCars.push(b_car1)
+
 function drawBlueCar() {
     ctx.drawImage(b_image, b_car1.x, b_car1.y, b_car1.w, b_car1.h)
 }
@@ -244,6 +268,7 @@ const g_car2 = {
     dx: 5,
     dy: 4.00
 }
+allCars.push(g_car2)
 
 function drawGreenCar2() {
     ctx.drawImage(b_image2, g_car2.x, g_car2.y, g_car2.w, g_car2.h)
@@ -261,8 +286,9 @@ const g_car1 = {
     y: -95,
     size: 20,
     dx: 5,
-    dy: 5.00
+    dy: 4.00
 }
+allCars.push(g_car1)
 
 function drawGreenCar() {
     ctx.drawImage(g_image, g_car1.x, g_car1.y, g_car1.w, g_car1.h)
@@ -282,8 +308,10 @@ const truck1 = {
     y: 0,
     size: 20,
     dx: 5,
-    dy: 4.00
+    dy: 4.44
 }
+
+allCars.push(truck1)
 
 function drawTruck1() {
     ctx.drawImage(t_image, truck1.x, truck1.y, truck1.w, truck1.h)
@@ -303,12 +331,14 @@ const truck2 = {
     dy: 4.40
 }
 
+allCars.push(truck2)
+
 function drawTruck2() {
     ctx.drawImage(t_image1, truck2.x, truck2.y, truck2.w, truck2.h)
 }
 // END OF TRUCK2
 
-// TRUCK3
+// TRUCK
 const t_image3 = document.getElementById('truck');
 
 const truck3 = {
@@ -320,6 +350,8 @@ const truck3 = {
     dx: 5,
     dy: 4.40
 }
+
+allCars.push(truck3)
 
 function drawTruck3() {
     ctx.drawImage(t_image3, truck3.x, truck3.y, truck3.w, truck3.h)
@@ -541,22 +573,43 @@ function update(){
     }
     //END TRUCK3 MOVEMENT
 
-    if(SHOW_ENTITY_BOUNDS){
-        ctx.strokeStyle = 'lime';
-        ctx.beginPath();
-        ctx.rect(player.x, player.y, player.w, player.h);
-        ctx.stroke();
-        ctx.rect(y_car1.x, y_car1.y, y_car1.w, y_car1.h);
-        ctx.stroke();
-        ctx.rect(b_car2.x, b_car2.y, b_car2.w, b_car2.h);
-        ctx.stroke();
-    }
+    // if(SHOW_ENTITY_BOUNDS){
+    //     ctx.strokeStyle = 'lime';
+    //     ctx.beginPath();
+    //     ctx.rect(player.x, player.y, player.w, player.h);
+    //     ctx.stroke();
+    //     ctx.rect(y_car1.x, y_car1.y, y_car1.w, y_car1.h);
+    //     ctx.stroke();
+    //     ctx.rect(b_car2.x, b_car2.y, b_car2.w, b_car2.h);
+    //     ctx.stroke();
+    // }
 
+    //SCORE
+    let score = document.createElement('div');
+    score.className = 'score';
+    let scoreVal = 0;
+    score.innerHTML = 'Points  :';
+    mainWrap.appendChild(score);
+    // score.innerHTML += `    ${scoreVal}`;
+    //END OF SCORE
+    
+    // setTimeout(function(){
+    //     scoreVal += 1
+    //     // console.log(scoreVal)
+    // }, 500)
+    
+    // function updateScore(){
+    //     setTimeout(function () {
+    //         scoreVal += 1
+    //         // console.log(scoreVal)
+    //     }, 500);
+    //     score.innerHTML += `    ${scoreVal}`;
+    // }
 
-
-
+    // updateScore();
+    collision();
     requestAnimationFrame(update);
-}
+};
 
 function moveRight(){
     player.dx = player.speed;
@@ -582,6 +635,32 @@ function keyUp(e){
     }
 }
 
+function collision() {
+    // debugger
+    // if (
+    //     y_car1.y >= 530 &&
+    //     y_car1.x < player.x + player.w &&
+    //     y_car1.x + y_car1.w > player.x
+    //     // y_car1.x <= player.x
+    // ) {
+    //     // debugger
+    //     console.log("HIT");
+    // }
+
+    for(let i=0; i < allCars.length; i++){
+        if (
+            (allCars[i].y > 545 || allCars[i].y >= 525 - allCars[i].h) && 
+            allCars[i].x < player.x + player.w && 
+            allCars[i].x + allCars[i].w > player.x){
+            window.location.reload();
+            // console.log("HIT");
+        }
+    }
+}
+
+
 update();
+// console.log(allCars)
+// collision();
 document.addEventListener('keydown', keyDown);
 document.addEventListener('keyup', keyUp);

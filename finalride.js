@@ -12,6 +12,14 @@ resetButton.onclick = function () {
 };
 mainWrap.appendChild(resetButton);
 
+
+
+//COLLISION CONSTANTS
+const SHOW_ENTITY_BOUNDS = true;
+const SHOW_ENTITY_AXIS = false;
+//END COLLISION
+
+
 // BUSH
 const bush_image = document.getElementById('bush');
 
@@ -22,7 +30,7 @@ const bush0 = {
     y: 0,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 const bush1 = {
@@ -32,7 +40,7 @@ const bush1 = {
     y: 75,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 const bush2 = {
@@ -42,7 +50,7 @@ const bush2 = {
     y: 150,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 const bush3 = {
@@ -52,7 +60,7 @@ const bush3 = {
     y: 250,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 const bush4 = {
@@ -62,7 +70,7 @@ const bush4 = {
     y: 350,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 const bush5 = {
@@ -72,7 +80,7 @@ const bush5 = {
     y: 450,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 const bush6 = {
@@ -82,7 +90,7 @@ const bush6 = {
     y: 550,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 const bush7 = {
@@ -92,7 +100,7 @@ const bush7 = {
     y: 650,
     size: 20,
     dx: 5,
-    dy: 11
+    dy: 11.00
 }
 
 function drawBush() {
@@ -112,8 +120,6 @@ function drawBush() {
     ctx.drawImage(bush_image, bush6.x + 650, bush6.y, bush6.w, bush6.h)
     ctx.drawImage(bush_image, bush7.x + 650, bush7.y, bush7.w, bush7.h)
 }
-
-
 // END OF BUSH
 
 
@@ -127,7 +133,7 @@ const y_car1 = {
     y: -20,
     size: 20,
     dx: 5,
-    dy: 3.3
+    dy: 3.25
 }
 
 function drawYellowCar() {
@@ -163,7 +169,7 @@ const y_car2 = {
     y: -450,
     size: 20,
     dx: 5,
-    dy: 5
+    dy: 5.00
 }
 
 function drawYellow2Car() {
@@ -182,13 +188,31 @@ const r_car1 = {
     y: -20,
     size: 20,
     dx: 5,
-    dy: 3
+    dy: 3.00
 }
 
 function drawRedCar() {
     ctx.drawImage(r_image, r_car1.x, r_car1.y, r_car1.w, r_car1.h)
 }
 // END OF RED CAR
+
+// RED CAR2
+const r_image2 = document.getElementById('red-car');
+
+const r_car2 = {
+    w: 50,
+    h: 90,
+    x: 360,
+    y: -415,
+    size: 20,
+    dx: 5,
+    dy: 4.20
+}
+
+function drawRedCar2() {
+    ctx.drawImage(r_image2, r_car2.x, r_car2.y, r_car2.w, r_car2.h)
+}
+// END OF RED CAR2
 
 // BLUE CAR
 const b_image = document.getElementById('blue-car');
@@ -200,7 +224,7 @@ const b_car1 = {
     y: -20,
     size: 20,
     dx: 5,
-    dy: 4
+    dy: 3.94
 }
 
 function drawBlueCar() {
@@ -218,7 +242,7 @@ const g_car2 = {
     y: -460,
     size: 20,
     dx: 5,
-    dy: 4
+    dy: 4.00
 }
 
 function drawGreenCar2() {
@@ -237,7 +261,7 @@ const g_car1 = {
     y: -95,
     size: 20,
     dx: 5,
-    dy: 5
+    dy: 5.00
 }
 
 function drawGreenCar() {
@@ -258,7 +282,7 @@ const truck1 = {
     y: 0,
     size: 20,
     dx: 5,
-    dy: 4
+    dy: 4.00
 }
 
 function drawTruck1() {
@@ -276,7 +300,7 @@ const truck2 = {
     y: -400,
     size: 20,
     dx: 5,
-    dy: 4.4
+    dy: 4.40
 }
 
 function drawTruck2() {
@@ -291,10 +315,10 @@ const truck3 = {
     w: 70,
     h: 200,
     x: 600,
-    y: -920,
+    y: -820,
     size: 20,
     dx: 5,
-    dy: 4.4
+    dy: 4.40
 }
 
 function drawTruck3() {
@@ -342,6 +366,9 @@ function newPos(){
     edgeStop();
 }
 
+
+
+
 // END OF PLAYER
 
 function update(){
@@ -357,6 +384,7 @@ function update(){
     drawGreenCar2();
     drawGreenCar();
     drawRedCar();
+    drawRedCar2();
     drawYellowCar();
     drawYellow2Car();
 
@@ -365,50 +393,50 @@ function update(){
     //BUSH MOVEMENT
     bush0.y += bush0.dy;
     if (bush0.y + bush0.size > canvas.height) {
-        bush0.y = -10;
-        bush0.dy += 0.2;
+        bush0.y = 0;
+        bush0.dy += 0.05;
     }
 
     bush1.y += bush1.dy;
     if (bush1.y + bush1.size > canvas.height) {
-        bush1.y = -10;
-        bush1.dy += 0.2;
+        bush1.y = 0;
+        bush1.dy += 0.05;
     }
 
     bush2.y += bush2.dy;
     if (bush2.y + bush2.size > canvas.height) {
-        bush2.y = -10;
-        bush2.dy += 0.2;
+        bush2.y = 0;
+        bush2.dy += 0.05;
     }
 
     bush3.y += bush3.dy;
     if (bush3.y + bush3.size > canvas.height) {
-        bush3.y = -10;
-        bush3.dy += 0.2;
+        bush3.y = 0;
+        bush3.dy += 0.05;
     }
 
     bush4.y += bush4.dy;
     if (bush4.y + bush4.size > canvas.height) {
-        bush4.y = -10;
-        bush4.dy += 0.2;
+        bush4.y = 0;
+        bush4.dy += 0.05;
     }
 
     bush5.y += bush5.dy;
     if (bush5.y + bush5.size > canvas.height) {
-        bush5.y = -10;
-        bush5.dy += 0.2;
+        bush5.y = 0;
+        bush5.dy += 0.05;
     }
 
     bush6.y += bush6.dy;
     if (bush6.y + bush6.size > canvas.height) {
-        bush6.y = -10;
-        bush6.dy += 0.2;
+        bush6.y = 0;
+        bush6.dy += 0.05;
     }
 
     bush7.y += bush7.dy;
     if (bush7.y + bush7.size > canvas.height) {
-        bush7.y = -10;
-        bush7.dy += 0.2;
+        bush7.y = 0;
+        bush7.dy += 0.05;
     }
     //END BUSH MOVEMENT
 
@@ -417,6 +445,7 @@ function update(){
 
     if (y_car1.y + y_car1.size > canvas.height) {
         y_car1.y = -90;
+        y_car1.dy += 0.05;
     }
     //END YELLOW CAR MOVEMENT
 
@@ -425,6 +454,7 @@ function update(){
 
     if (b_car2.y + b_car2.size > canvas.height) {
         b_car2.y = -90;
+        b_car2.dy += 0.05;
     }
     //END BLUE CAR2 MOVEMENT
 
@@ -433,6 +463,7 @@ function update(){
 
     if (y_car2.y + y_car2.size > canvas.height) {
         y_car2.y = -90;
+        y_car2.dy += 0.05;
     }
     //END YELLOW CAR MOVEMENT
 
@@ -441,14 +472,25 @@ function update(){
 
     if (r_car1.y + r_car1.size > canvas.height) {
         r_car1.y = -90;
+        r_car1.dy += 0.05;
     }
     //END RED CAR MOVEMENT
+
+    //RED CAR2 MOVEMENT
+    r_car2.y += r_car2.dy;
+
+    if (r_car2.y + r_car2.size > canvas.height) {
+        r_car2.y = -90;
+        r_car2.dy += 0.05;
+    }
+    //END RED CAR 2MOVEMENT
 
     //GREEN CAR1 MOVEMENT
     g_car2.y += g_car2.dy;
 
     if (g_car2.y + g_car2.size > canvas.height) {
         g_car2.y = -90;
+        g_car2.dy += 0.05;
     }
     //END GREEN CAR 1 MOVEMENT
 
@@ -457,6 +499,7 @@ function update(){
 
     if (g_car1.y + g_car1.size > canvas.height) {
         g_car1.y = -90;
+        g_car1.dy += 0.05;
     }
     //END GREEN CAR2 MOVEMENT
 
@@ -465,6 +508,7 @@ function update(){
 
     if (b_car1.y + b_car1.size > canvas.height) {
         b_car1.y = -90;
+        b_car1.dy += 0.05;
     }
     //END BLUE CAR MOVEMENT
 
@@ -474,6 +518,7 @@ function update(){
 
     if(truck1.y + truck1.size > canvas.height){
         truck1.y = -200;
+        truck1.dy += 0.05;
     }
     //END TRUCK1 MOVEMENT
 
@@ -482,6 +527,8 @@ function update(){
 
     if (truck2.y + truck2.size > canvas.height) {
         truck2.y = -200;
+        truck2.dy += 0.05;
+
     }
     //END TRUCK2 MOVEMENT
 
@@ -490,8 +537,22 @@ function update(){
 
     if (truck3.y + truck3.size > canvas.height) {
         truck3.y = -200;
+        truck3.dy += 0.05;
     }
     //END TRUCK3 MOVEMENT
+
+    if(SHOW_ENTITY_BOUNDS){
+        ctx.strokeStyle = 'lime';
+        ctx.beginPath();
+        ctx.rect(player.x, player.y, player.w, player.h);
+        ctx.stroke();
+        ctx.rect(y_car1.x, y_car1.y, y_car1.w, y_car1.h);
+        ctx.stroke();
+        ctx.rect(b_car2.x, b_car2.y, b_car2.w, b_car2.h);
+        ctx.stroke();
+    }
+
+
 
 
     requestAnimationFrame(update);

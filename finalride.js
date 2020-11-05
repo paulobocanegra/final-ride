@@ -16,17 +16,6 @@ mainWrap.appendChild(resetButton);
 
 
 
-
-
-//COLLISION CONSTANTS
-// const SHOW_ENTITY_BOUNDS = true;
-// const SHOW_ENTITY_AXIS = false;
-//END COLLISION
-
-
-
-
-
 // BUSH
 const bush_image = document.getElementById('bush');
 
@@ -649,9 +638,9 @@ function collision() {
 
     for(let i=0; i < allCars.length; i++){
         if (
-            (allCars[i].y > 545 || allCars[i].y >= 525 - allCars[i].h) && 
-            allCars[i].x < player.x + player.w && 
-            allCars[i].x + allCars[i].w > player.x){
+            (allCars[i].y > 610 || allCars[i].y >= 535 - allCars[i].h) && 
+            allCars[i].x < player.x + player.w - 5 && 
+            allCars[i].x + allCars[i].w - 5 > player.x){
             window.location.reload();
             // console.log("HIT");
         }

@@ -28,9 +28,10 @@ html *{
     text-align: center;
     padding-top: 15px;
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 4px;
     color: white;
     margin-top: 90px;
+    box-shadow: 2px 2px 2px 2px rgb(127, 128, 134);
 }
 
 .description{
@@ -79,7 +80,7 @@ html *{
     height: 25px;
     text-align: center;
     top: 15px;
-    left: 73vw;
+    left: 1010px;
     padding-top: 10px;
 }
 
@@ -91,8 +92,8 @@ html *{
     border: 1px solid;
     height: 35px;
     text-align: center;
-    top: 54px;
-    left: 87vw;
+    top: 15px;
+    left: 1215px;
     padding-top: 5px;
 }
 
@@ -100,6 +101,40 @@ html *{
     background-color: rgb(7, 14, 77);
 }
 
+.game-over{
+    position: absolute;
+    font-weight: 400;
+    font-size: 25px;
+    color: black;
+    background-color: orange;
+    border-radius: 4px;
+    width: 500px;
+    height: 80px;
+    text-align: center;
+    top: 250px;
+    left: 620px;
+    padding-top: 45px;
+    box-shadow: 3px 3px 6px 5px rgb(3, 4, 27);
+}
+
+.game-over-2{
+    position: absolute;
+    font-weight: 400;
+    font-size: 25px;
+    color: black;
+    background-color: orange;
+    border-radius: 4px;
+    width: 500px;
+    height: 80px;
+    text-align: center;
+    top: 450px;
+    left: 620px;
+    padding-top: 45px;
+    box-shadow: 3px 3px 6px 5px rgb(3, 4, 27);
+
+}
+
 .entity{
     display: none;
 }
+

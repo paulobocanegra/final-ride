@@ -297,7 +297,7 @@ const truck1 = {
     y: 0,
     size: 20,
     dx: 5,
-    dy: 4.44
+    dy: 4.40
 }
 
 allCars.push(truck1)
@@ -380,6 +380,19 @@ function edgeStop(){
     }
 }
 
+let endOfGame = false
+
+setInterval(function () {
+    let score = document.createElement('div');
+    score.className = 'score';
+    score.innerHTML = `Points  :   ${scoreVal}`;
+    mainWrap.appendChild(score);
+    if (endOfGame === false){
+    scoreVal += 1
+    }
+    // console.log(scoreVal)
+}, 300)
+
 function newPos(){
     player.x += player.dx;
     player.y += player.dy;
@@ -387,7 +400,7 @@ function newPos(){
     edgeStop();
 }
 
-
+let scoreVal = 0;
 
 
 // END OF PLAYER
@@ -414,49 +427,49 @@ function update(){
     //BUSH MOVEMENT
     bush0.y += bush0.dy;
     if (bush0.y + bush0.size > canvas.height) {
-        bush0.y = 0;
-        bush0.dy += 0.05;
+        bush0.y = -90;
+        bush0.dy += 0.02;
     }
 
     bush1.y += bush1.dy;
     if (bush1.y + bush1.size > canvas.height) {
-        bush1.y = 0;
-        bush1.dy += 0.05;
+        bush1.y = -90;
+        bush1.dy += 0.02;
     }
 
     bush2.y += bush2.dy;
     if (bush2.y + bush2.size > canvas.height) {
-        bush2.y = 0;
-        bush2.dy += 0.05;
+        bush2.y = -90;
+        bush2.dy += 0.02;
     }
 
     bush3.y += bush3.dy;
     if (bush3.y + bush3.size > canvas.height) {
-        bush3.y = 0;
-        bush3.dy += 0.05;
+        bush3.y = -90;
+        bush3.dy += 0.02;
     }
 
     bush4.y += bush4.dy;
     if (bush4.y + bush4.size > canvas.height) {
-        bush4.y = 0;
-        bush4.dy += 0.05;
+        bush4.y = -90;
+        bush4.dy += 0.02;
     }
 
     bush5.y += bush5.dy;
     if (bush5.y + bush5.size > canvas.height) {
-        bush5.y = 0;
-        bush5.dy += 0.05;
+        bush5.y = -90;
+        bush5.dy += 0.02;
     }
 
     bush6.y += bush6.dy;
     if (bush6.y + bush6.size > canvas.height) {
-        bush6.y = 0;
-        bush6.dy += 0.05;
+        bush6.y = -90;
+        bush6.dy += 0.02;
     }
 
     bush7.y += bush7.dy;
     if (bush7.y + bush7.size > canvas.height) {
-        bush7.y = 0;
+        bush7.y = -90;
         bush7.dy += 0.05;
     }
     //END BUSH MOVEMENT
@@ -466,7 +479,7 @@ function update(){
 
     if (y_car1.y + y_car1.size > canvas.height) {
         y_car1.y = -90;
-        y_car1.dy += 0.05;
+        y_car1.dy += 0.02;
     }
     //END YELLOW CAR MOVEMENT
 
@@ -475,7 +488,7 @@ function update(){
 
     if (b_car2.y + b_car2.size > canvas.height) {
         b_car2.y = -90;
-        b_car2.dy += 0.05;
+        b_car2.dy += 0.02;
     }
     //END BLUE CAR2 MOVEMENT
 
@@ -484,7 +497,7 @@ function update(){
 
     if (y_car2.y + y_car2.size > canvas.height) {
         y_car2.y = -90;
-        y_car2.dy += 0.05;
+        y_car2.dy += 0.02;
     }
     //END YELLOW CAR MOVEMENT
 
@@ -493,7 +506,7 @@ function update(){
 
     if (r_car1.y + r_car1.size > canvas.height) {
         r_car1.y = -90;
-        r_car1.dy += 0.05;
+        r_car1.dy += 0.02;
     }
     //END RED CAR MOVEMENT
 
@@ -502,7 +515,7 @@ function update(){
 
     if (r_car2.y + r_car2.size > canvas.height) {
         r_car2.y = -90;
-        r_car2.dy += 0.05;
+        r_car2.dy += 0.02;
     }
     //END RED CAR 2MOVEMENT
 
@@ -511,7 +524,7 @@ function update(){
 
     if (g_car2.y + g_car2.size > canvas.height) {
         g_car2.y = -90;
-        g_car2.dy += 0.05;
+        g_car2.dy += 0.02;
     }
     //END GREEN CAR 1 MOVEMENT
 
@@ -520,7 +533,7 @@ function update(){
 
     if (g_car1.y + g_car1.size > canvas.height) {
         g_car1.y = -90;
-        g_car1.dy += 0.05;
+        g_car1.dy += 0.02;
     }
     //END GREEN CAR2 MOVEMENT
 
@@ -529,7 +542,7 @@ function update(){
 
     if (b_car1.y + b_car1.size > canvas.height) {
         b_car1.y = -90;
-        b_car1.dy += 0.05;
+        b_car1.dy += 0.02;
     }
     //END BLUE CAR MOVEMENT
 
@@ -539,7 +552,7 @@ function update(){
 
     if(truck1.y + truck1.size > canvas.height){
         truck1.y = -200;
-        truck1.dy += 0.05;
+        truck1.dy += 0.02;
     }
     //END TRUCK1 MOVEMENT
 
@@ -548,7 +561,7 @@ function update(){
 
     if (truck2.y + truck2.size > canvas.height) {
         truck2.y = -200;
-        truck2.dy += 0.05;
+        truck2.dy += 0.02;
 
     }
     //END TRUCK2 MOVEMENT
@@ -558,7 +571,7 @@ function update(){
 
     if (truck3.y + truck3.size > canvas.height) {
         truck3.y = -200;
-        truck3.dy += 0.05;
+        truck3.dy += 0.02;
     }
     //END TRUCK3 MOVEMENT
 
@@ -574,14 +587,18 @@ function update(){
     // }
 
     //SCORE
-    let score = document.createElement('div');
-    score.className = 'score';
-    let scoreVal = 0;
-    score.innerHTML = 'Points  :';
-    mainWrap.appendChild(score);
+    // let score = document.createElement('div');
+    // score.className = 'score';
+    // let scoreVal = 0;
+    // score.innerHTML = `Points  :   ${scoreVal}`;
+    // mainWrap.appendChild(score);
     // score.innerHTML += `    ${scoreVal}`;
     //END OF SCORE
+
     
+
+    
+
     // setTimeout(function(){
     //     scoreVal += 1
     //     // console.log(scoreVal)
@@ -638,10 +655,28 @@ function collision() {
 
     for(let i=0; i < allCars.length; i++){
         if (
-            (allCars[i].y > 610 || allCars[i].y >= 535 - allCars[i].h) && 
+            (allCars[i].y > 600
+                 || allCars[i].y >= 535 - allCars[i].h
+                 ) && 
             allCars[i].x < player.x + player.w - 5 && 
-            allCars[i].x + allCars[i].w - 5 > player.x){
-            window.location.reload();
+            allCars[i].x + allCars[i].w - 8 > player.x){
+
+            // GAME OVER
+            let gameOver = document.createElement('div');
+            gameOver.className = "game-over";
+            mainWrap.appendChild(gameOver);
+            // gameOver.appendChild(resetButton);
+            gameOver.innerHTML = `Game Over. Click Restart to try again.`;
+            endOfGame = true
+            //END GAME OVER
+
+            let gameOver2 = document.createElement('div');
+            gameOver2.className = "game-over-2";
+            mainWrap.appendChild(gameOver2);
+            gameOver2.innerHTML = `Your score :    ${scoreVal}`;
+
+
+            window.location.freeze();
             // console.log("HIT");
         }
     }

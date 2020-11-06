@@ -138,3 +138,6 @@ html *{
     display: none;
 }
 
+.intruction-title{
+    font-weight: 800;
+}

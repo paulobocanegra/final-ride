@@ -149,10 +149,10 @@ const y_car2 = {
     w: 50,
     h: 90,
     x: 520,
-    y: -450,
+    y: -250,
     size: 20,
     dx: 5,
-    dy: 4.00
+    dy: 4.30
 }
 
 allCars.push(y_car2)
@@ -172,7 +172,7 @@ const b_car2 = {
     y: -430,
     size: 20,
     dx: 5,
-    dy: 3.3
+    dy: 3.20
 }
 
 
@@ -192,10 +192,10 @@ const r_car1 = {
     w: 50,
     h: 90,
     x: 220,
-    y: -20,
+    y: -60,
     size: 20,
     dx: 5,
-    dy: 3.00
+    dy: 3.55
 }
 
 allCars.push(r_car1)
@@ -275,7 +275,7 @@ const g_car1 = {
     y: -95,
     size: 20,
     dx: 5,
-    dy: 4.00
+    dy: 4.40
 }
 allCars.push(g_car1)
 
@@ -656,8 +656,8 @@ function collision() {
     for(let i=0; i < allCars.length; i++){
         if (
             (allCars[i].y > 600
-                 || allCars[i].y >= 535 - allCars[i].h
-                 ) && 
+                || allCars[i].y >= 535 - allCars[i].h
+                ) && 
             allCars[i].x < player.x + player.w - 5 && 
             allCars[i].x + allCars[i].w - 8 > player.x){
 

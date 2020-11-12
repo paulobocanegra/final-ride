@@ -683,6 +683,7 @@ function collision() {
 }
 
 
+
 update();
 // console.log(allCars)
 // collision();

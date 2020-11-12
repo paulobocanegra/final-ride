@@ -2,8 +2,16 @@ html *{
     font-family: Arial, Helvetica, sans-serif
 }
 
+html{
+    background-image: url("./imgs/abstract.jpg");
+    background-position: center;
+    /* background-size: cover; */
+}
+
 .screen{
     padding: 50px;
+    margin-left: 7vh;
+    /* margin-right: 15vh; */
 }
 
 .screen{
@@ -40,7 +48,7 @@ html *{
     color: black;
     height: 70px;
     width: 300px;
-    margin-top: 40px;
+    margin: 40px 40px 0;
     padding: 20px;
     border-radius: 3px;
     line-height: 25px;
@@ -68,7 +76,7 @@ html *{
 } */
 
 #canvas{
-    background-color: rgba(21, 23, 29, 0.938);
+    background-color: rgba(21, 23, 29);
     border-radius: 4px;
 }
 
@@ -89,7 +97,6 @@ html *{
     color: white;
     background-color: rgb(14, 27, 144);
     border-radius: 4px;
-    /* border: 1px solid; */
     height: 35px;
     text-align: center;
     top: 15px;
@@ -112,7 +119,7 @@ html *{
     height: 80px;
     text-align: center;
     top: 250px;
-    left: 620px;
+    left: 750px;
     padding-top: 45px;
     box-shadow: 3px 3px 6px 5px rgb(3, 4, 27);
 }
@@ -128,7 +135,7 @@ html *{
     height: 80px;
     text-align: center;
     top: 450px;
-    left: 620px;
+    left: 750px;
     padding-top: 45px;
     box-shadow: 3px 3px 6px 5px rgb(3, 4, 27);
 
